@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { fetchCoins } from '../actions';
 
 class Display extends Component {
@@ -14,19 +15,10 @@ class Display extends Component {
     this.props.fetchCoins()
   }
 
-  renderData(coin) {
-    const name = coin.name;
-    return (
-      <div>
-        {name}
-      </div>
-    )
-  }
-
   render() {
+    console.log(this.props.coin_collection);
     return (
       <div>
-        {this.props.coin_collection.map(this.renderData)}
       </div>
     )
   }
@@ -38,4 +30,8 @@ function mapStateToProps({ coin_collection }) {
   }
 }
 
-export default connect(mapStateToProps, { fetchCoins })(Display);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchCoins }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Display);
