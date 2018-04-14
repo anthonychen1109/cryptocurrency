@@ -1,6 +1,7 @@
 import React from 'react';
-
 import images from './images';
+import Header from './header';
+import Display from '../containers/display';
 
 const bg = images.bg;
 
@@ -13,9 +14,8 @@ const App = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat"
       }}>
-      <div className="container heading">
-        <h1>Crypto Currency</h1>
-      </div>
+        <Header />
+        <Display />
     </div>
   )
 }
