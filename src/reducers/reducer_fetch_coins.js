@@ -6,7 +6,7 @@ export default function(state = {}, action) {
       console.log(action.payload);
       return {
         ...state,
-        coins: action.payload
+        coins: action.payload.data
       }
     default:
       return state
