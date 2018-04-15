@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0; }
+
 .app {
   height: 100vh;
   width: 100%; }
@@ -22,5 +26,35 @@
 .coin-data p {
   color: white;
   text-shadow: 0px 0px 3px black; }
+
+.sign-up {
+  height: 100vh;
+  width: 100%; }
+  .sign-up ul li {
+    float: right;
+    font-size: 1.5em;
+    list-style: none;
+    padding-right: 40px; }
+  .sign-up form {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    .sign-up form .register .register-username, .sign-up form .register .register-pw, .sign-up form .register .register-confirm-pw {
+      display: flex;
+      padding-bottom: 20px; }
+      .sign-up form .register .register-username .register-fieldname, .sign-up form .register .register-pw .register-fieldname, .sign-up form .register .register-confirm-pw .register-fieldname {
+        min-width: 200px; }
+    .sign-up form .register p {
+      text-align: right;
+      color: white;
+      text-shadow: 0px 0px 3px black; }
+    .sign-up form .register input {
+      width: 300px; }
+      .sign-up form .register input:focus {
+        outline: none; }
+
+.register-btn {
+  float: right; }
 
 /*# sourceMappingURL=styles.css.map */

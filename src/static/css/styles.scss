@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 @mixin text-color {
   color: white;
   text-shadow: 0px 0px 3px black;
@@ -39,4 +44,46 @@
   p {
     @include text-color;
   }
+}
+
+// ################### SIGNUP ###################
+
+.sign-up {
+  height: 100vh;
+  width: 100%;
+  ul li {
+    float: right;
+    font-size: 1.5em;
+    list-style: none;
+    padding-right: 40px;
+  }
+  form {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .register {
+      .register-username, .register-pw, .register-confirm-pw {
+        display: flex;
+        padding-bottom: 20px;
+        .register-fieldname {
+          min-width: 200px;
+        }
+      }
+      p {
+        text-align: right;
+        @include text-color;
+      }
+      input {
+        width: 300px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.register-btn {
+  float: right;
 }
