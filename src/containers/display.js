@@ -16,7 +16,7 @@ class Display extends Component {
   }
 
   render() {
-    console.log(this.props.coin_collection);
+    console.log('here', this.props.coin_collection);
     return (
       <div>
       </div>
@@ -24,9 +24,10 @@ class Display extends Component {
   }
 }
 
-function mapStateToProps({ coin_collection }) {
+function mapStateToProps(state) {
+  console.log(state);
   return {
-    coin_collection
+    coin_collection: state.coin_collection
   }
 }
 
