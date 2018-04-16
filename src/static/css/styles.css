@@ -3,7 +3,7 @@
   padding: 0; }
 
 .app {
-  height: 100vh;
+  height: 100%;
   width: 100%; }
   .app .left {
     max-width: 20%; }
@@ -25,7 +25,11 @@
 
 .display-cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly; }
+
+.card {
+  margin: 10px; }
 
 .sign-up {
   height: 100vh;

@@ -9,7 +9,7 @@
 }
 // ################### APP ###################
 .app {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   .left {
     max-width: 20%;
@@ -42,7 +42,12 @@
 
 .display-cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.card {
+  margin: 10px;
 }
 
 // ################### SIGNUP ###################
