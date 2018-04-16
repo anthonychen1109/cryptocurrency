@@ -10,7 +10,7 @@ export default function(state = initialState, action) {
       console.log('reducer', action.payload.data);
       return {
         ...state,
-        coin_list: [...state, action.payload.data]
+        coin_list: action.payload.data
       }
     default:
       return state
