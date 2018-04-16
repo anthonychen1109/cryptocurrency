@@ -16,18 +16,17 @@ class Display extends Component {
   }
 
   render() {
-    console.log('here', this.props.coin_collection);
+    console.log(this.props.coin_collection.coin_list[0]);
     return (
-      <div>
+      <div className="display-cards">
       </div>
     )
   }
 }
 
-function mapStateToProps(state) {
-  console.log(state);
+function mapStateToProps({ coin_collection }) {
   return {
-    coin_collection: state.coin_collection
+    coin_collection
   }
 }
 
