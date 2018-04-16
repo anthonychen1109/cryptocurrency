@@ -16,9 +16,22 @@ class Display extends Component {
   }
 
   render() {
-    console.log(this.props.coin_collection.coin_list[0]);
+    // console.log(this.props.coin_collection.coin_list);
+    let render_data = this.props.coin_collection.coin_list.map((item, index) => {
+      return (
+        <div key={index} className="card" style={{width: "20%"}}>
+          <div className="card-body">
+            <p className="card-text">{item.symbol}</p>
+            <p className="card-text">{item.name}</p>
+            <p className="card-text">Price USD: {item.price_usd}</p>
+            <p className="card-text">Price BTC: {item.price_btc}</p>
+          </div>
+        </div>
+      )
+    })
     return (
       <div className="display-cards">
+        {render_data}
       </div>
     )
   }

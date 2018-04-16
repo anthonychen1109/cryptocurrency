@@ -14,6 +14,10 @@ class Signup extends Component {
     }
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <div className="sign-up"
@@ -26,7 +30,7 @@ class Signup extends Component {
         <ul>
           <li><Link to="/">Home</Link></li>
         </ul>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="register">
 
             <div className="register-username">
