@@ -40,10 +40,9 @@
 
 // ################### DISPLAY ###################
 
-.coin-data {
-  p {
-    @include text-color;
-  }
+.display-cards {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 // ################### SIGNUP ###################
