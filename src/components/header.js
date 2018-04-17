@@ -5,13 +5,12 @@ const Header = () => {
   return (
     <div className="header">
       <ul>
-        <li><p>WTFCOIN</p></li>
-        <li>Home</li>
-        <li>Markets</li>
+        <li><Link to='/'>WTFCOIN</Link></li>
+        <li><Link to='/markets'>Markets</Link></li>
       </ul>
       <ul>
         <li>Log In</li>
-        <li><Link to='/signup'>Sign Up</Link></li>
+        <li><a href='http://127.0.0.1:8000/signup/'>Sign Up</a></li>
       </ul>
     </div>
   )

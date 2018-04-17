@@ -1,16 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './app';
 import Signup from '../containers/signup';
+import Markets from '../containers/markets';
 
 const Routes = () => {
   return (
     <BrowserRouter>
-      <div>
+      <Switch>
+        <Route path ='/markets' component={Markets} />
         <Route exact path='/' component={App} />
-        <Route path="/signup" component={Signup} />
-      </div>
+      </Switch>
     </BrowserRouter>
   )
 }

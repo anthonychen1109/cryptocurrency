@@ -12,7 +12,7 @@ const App = () => {
         backgroundImage: "url(" + bg + ")",
         backgroundPosition: "center",
         backgroundSize: "cover",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
       }}>
         <Header />
         <Display />
