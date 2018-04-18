@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth import login
 from django.http import HttpResponseRedirect
+from rest_framework import viewsets
+from rest_framework.response import Response
 from .forms import UserForm
+from . import serializers
+from . import models
 
 # Create your views here.
 
@@ -17,3 +21,7 @@ def add_user(request):
         form = UserForm()
 
     return render(request, 'adduser.html', {'form': form})
+
+class CoinViewSet(viewsets.ModelViewSet):
+    queryset = models.Coin.objects.all()
+    serializer_class = serializers.CoinSerializer
