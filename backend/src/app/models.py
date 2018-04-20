@@ -6,7 +6,6 @@ class Coin(models.Model):
     name = models.CharField(max_length=128)
     price_usd = models.FloatField()
     price_btc = models.FloatField()
-    slug = models.SlugField(max_length=10)
 
     def __str__(self):
         return self.name
