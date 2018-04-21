@@ -5,7 +5,7 @@ import coin_history from './reducer_fetch_historical_data';
 
 const rootReducer = combineReducers({
   coin_collection,
-  coin_history
+  coin_history,
 })
 
 export default rootReducer;

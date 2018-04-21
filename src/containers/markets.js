@@ -20,7 +20,7 @@ class Markets extends Component {
   }
 
   render() {
-    console.log(this.props.coin_collection);
+    // console.log(this.props.coin_collection);
     let render_data = this.props.coin_collection.coin_list_all.map((item, index) => {
       return (
         <div key={index} className="grid container">
@@ -43,7 +43,7 @@ class Markets extends Component {
         }}
         >
         <Header />
-        <div>
+        <div className="market-display">
           {render_data}
         </div>
       </div>

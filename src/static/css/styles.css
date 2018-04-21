@@ -29,11 +29,6 @@ html, body {
       .header ul {
         display: none; } }
 
-.display-title h1 {
-  text-align: center;
-  color: white;
-  text-shadow: 0px 0px 3px black; }
-
 .display-cards {
   display: flex;
   flex-wrap: wrap;
@@ -55,11 +50,19 @@ html, body {
       margin-bottom: 10px;
       width: 80%; } }
 
+.markets {
+  height: 100vh;
+  width: 100%; }
+  .markets .market-display {
+    height: 80vh;
+    overflow: scroll; }
+
 .grid {
   background-color: black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  overflow: scroll; }
+  overflow: scroll;
+  padding: 10px; }
   .grid p {
     color: white;
     text-shadow: 0px 0px 3px black; }

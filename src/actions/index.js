@@ -32,8 +32,9 @@ export function fetchAllCoins() {
 
 }
 
-export function fetchHistoricalData() {
-  const url =`${BACKEND_URL}coins/`;
+export function fetchHistoricalData(sym) {
+  let symbol = sym.toUpperCase();
+  const url =`${BACKEND_URL}coins/${symbol}`;
 
   const request = axios.get(url);
   console.log('action', request);
