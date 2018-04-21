@@ -21,5 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^signup/', views.add_user, name='add_user'),
     url(r'^coins/$', views.ListCoins.as_view(), name="coins"),
-    url(r'^coin/(?P<coin_name>.+)/$', views.ListCoin.as_view(), name="coin"),
+    url(r'^coins/(?P<coin_name>.+)/$', views.ListCreateCoin.as_view(), name="coin"),
 ]

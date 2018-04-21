@@ -26,7 +26,7 @@ class ListCoins(generics.ListAPIView):
     queryset = models.Coin.objects.all()
     serializer_class = serializers.CoinSerializer
 
-class ListCoin(generics.ListAPIView):
+class ListCreateCoin(generics.ListCreateAPIView):
     serializer_class = serializers.CoinSerializer
 
     def get_queryset(self):
