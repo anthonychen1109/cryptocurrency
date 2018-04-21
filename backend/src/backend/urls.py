@@ -15,14 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from rest_framework import routers
 from app import views
-
-router = routers.SimpleRouter()
-router.register(r'coins', views.CoinViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^signup/', views.add_user, name='add_user'),
-    url(r'^', include(router.urls, namespace='coin')),
+    url(r'^coins/$', views.ListCoins.as_view(), name="coins"),
+    url(r'^coins/(?P<coin_name>.+)/$', views.ListCreateCoin.as_view(), name="coin"),
 ]

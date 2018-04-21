@@ -47,13 +47,6 @@ html,body {
 
 // ################### DISPLAY ###################
 
-.display-title {
-  h1 {
-    text-align: center;
-    @include text-color;
-  }
-}
-
 .display-cards {
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +74,12 @@ html,body {
 // ################### MARKETS ###################
 
 .markets {
-
+  height: 100vh;
+  width: 100%;
+  .market-display {
+    height: 80vh;
+    overflow: scroll;
+  }
 }
 
 .grid {
@@ -89,6 +87,7 @@ html,body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   overflow: scroll;
+  padding: 10px;
   p {
     @include text-color;
   }

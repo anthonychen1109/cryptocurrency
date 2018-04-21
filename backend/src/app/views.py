@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import login
 from django.http import HttpResponseRedirect
-from rest_framework import viewsets
+from rest_framework import generics
 from rest_framework.response import Response
 from .forms import UserForm
 from . import serializers
@@ -22,6 +22,13 @@ def add_user(request):
 
     return render(request, 'adduser.html', {'form': form})
 
-class CoinViewSet(viewsets.ModelViewSet):
+class ListCoins(generics.ListAPIView):
     queryset = models.Coin.objects.all()
     serializer_class = serializers.CoinSerializer
+
+class ListCreateCoin(generics.ListCreateAPIView):
+    serializer_class = serializers.CoinSerializer
+
+    def get_queryset(self):
+        coin_name = self.kwargs['coin_name']
+        return models.Coin.objects.filter(symbol=coin_name.upper())
