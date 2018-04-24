@@ -2,7 +2,7 @@ html,body {
   height: 100%;
 }
 
-* {
+*, p {
   margin: 0;
   padding: 0;
 }
@@ -13,7 +13,7 @@ html,body {
 }
 // ################### APP ###################
 .app {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   .left {
     max-width: 20%;
@@ -38,6 +38,14 @@ html,body {
     @media only screen and (max-width: 800px) {
       display: none;
     }
+  }
+}
+
+.text {
+  &:hover {
+    color: red;
+    text-decoration: none;
+    transition-duration: .3s;
   }
 }
 
