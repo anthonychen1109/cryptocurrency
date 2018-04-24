@@ -30,14 +30,13 @@ export function fetchAllCoins() {
     type: FETCH_ALL_COINS,
     payload: request
   }
-
 }
 
 export function fetchHistoricalData(sym) {
   let symbol = sym.toUpperCase();
   const url =`${BACKEND_URL}coins/${symbol}`;
 
-  const request = axios.get(url);
+  const request = axios.get(url)
   console.log('action', request);
 
   return {
@@ -49,7 +48,9 @@ export function fetchHistoricalData(sym) {
 export function searchCoin(name) {
 
   const url = `${BASE_URL}ticker/${name}/`
-  const request = axios.get(url);
+  const request = axios.get(url)
+    .then(res => res.data[0])
+    .catch(err => err);
 
   return {
     type: SEARCH_COIN,
