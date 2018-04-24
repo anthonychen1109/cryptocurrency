@@ -13,7 +13,7 @@ class SingleDisplayCoin extends Component {
   }
 
   setDisplay = () => {
-    this.setState({ show: !this.state.show })
+    this.setState({ show: true })
   }
 
   render() {
