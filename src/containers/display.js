@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCoins, fetchHistoricalData } from '../actions';
+import SearchCoin from './search_coin';
 
 class Display extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class Display extends Component {
     let render_data = this.props.coin_collection.coin_list.map((item, index) => {
 
       return (
-        <div key={index} className="card">
+        <div key={index} className="card display-card">
           <div className="card-body"
             onClick={() => this.props.fetchHistoricalData(item.symbol)}>
             <p className="card-text">{item.symbol}</p>
@@ -42,6 +43,7 @@ class Display extends Component {
     })
     return (
       <div className="display">
+        <SearchCoin />
         <div className="display-cards">
           {render_data}
         </div>
