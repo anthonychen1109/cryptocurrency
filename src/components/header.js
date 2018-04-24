@@ -7,6 +7,7 @@ const Header = () => {
       <ul>
         <li><Link to='/'>WTFCOIN</Link></li>
         <li><Link to='/markets'>Markets</Link></li>
+        <li><Link to='/search'>Search Coin</Link></li>
       </ul>
       <ul>
         <li>Log In</li>
