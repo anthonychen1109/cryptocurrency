@@ -34,16 +34,12 @@ html,body {
       font-size: 1.5em;
       list-style: none;
       padding: 0 10px;
-      &:hover {
-        cursor: pointer;
-      }
     }
     @media only screen and (max-width: 800px) {
       display: none;
     }
   }
 }
-
 
 // ################### DISPLAY ###################
 
@@ -57,7 +53,7 @@ html,body {
   }
 }
 
-.card {
+.display-card {
   margin: 10px;
   width: 20%;
   &:hover {
@@ -68,6 +64,33 @@ html,body {
     margin: 0 auto;
     margin-bottom: 10px;
     width: 80%;
+  }
+}
+
+// ################### SEARCH ###################
+
+.form-control {
+  &:focus {
+    outline: none;
+  }
+}
+
+// ################### SINGLE COIN ###################
+
+.single_coin {
+  height: 100vh;
+  width: 100%;
+}
+
+.single_card {
+  margin-top: 40px;
+}
+
+.enter-name {
+  h1 {
+    margin-top: 40px;
+    text-align: center;
+    @include text-color;
   }
 }
 
