@@ -10,7 +10,7 @@ const Header = () => {
         <li><Link className='text' to='/search'>Search Coin</Link></li>
       </ul>
       <ul>
-        <li>Log In</li>
+        <li><a className='text' href='http://127.0.0.1:8000/login/'>Log In</a></li>
         <li><a className='text' href='http://127.0.0.1:8000/signup/'>Sign Up</a></li>
       </ul>
     </div>
