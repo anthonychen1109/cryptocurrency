@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% block body_block %}
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Create new user account" />
-</form>
+<div class="container">
+  <h1>Please Sign Up Here!</h1>
+  <form method="post" action="">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Create new user account" />
+  </form>  
+</div>
+
 {% endblock %}
