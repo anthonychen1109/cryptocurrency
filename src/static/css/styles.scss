@@ -107,9 +107,30 @@ html,body {
 .markets {
   height: 100vh;
   width: 100%;
+  .market-header {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    opacity: .8;
+    p {
+      padding: 10px;
+      text-align: center;
+      @include text-color;
+    }
+  }
   .market-display {
     height: 80vh;
     overflow: scroll;
+    p {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.market-container {
+  @media only screen and (max-width: 800px) {
+    margin-top: 40px;    
   }
 }
 
@@ -117,6 +138,7 @@ html,body {
   background-color: black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  opacity: .8;
   overflow: scroll;
   padding: 10px;
   p {

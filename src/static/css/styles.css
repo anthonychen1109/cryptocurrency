@@ -72,14 +72,32 @@ html, body {
 .markets {
   height: 100vh;
   width: 100%; }
+  .markets .market-header {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    opacity: .8; }
+    .markets .market-header p {
+      padding: 10px;
+      text-align: center;
+      color: white;
+      text-shadow: 0px 0px 3px black; }
   .markets .market-display {
     height: 80vh;
     overflow: scroll; }
+    .markets .market-display p {
+      padding: 10px;
+      text-align: center; }
+
+@media only screen and (max-width: 800px) {
+  .market-container {
+    margin-top: 40px; } }
 
 .grid {
   background-color: black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  opacity: .8;
   overflow: scroll;
   padding: 10px; }
   .grid p {
