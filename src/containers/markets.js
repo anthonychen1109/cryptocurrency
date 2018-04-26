@@ -43,8 +43,15 @@ class Markets extends Component {
         }}
         >
         <Header />
-        <div className="market-display">
-          {render_data}
+        <div className="market-container">
+          <div className="container market-header">
+            <p>Coin Name:</p>
+            <p>Price USD:</p>
+            <p>% change 1h</p>
+          </div>
+          <div className="market-display">
+            {render_data}
+          </div>
         </div>
       </div>
     );
