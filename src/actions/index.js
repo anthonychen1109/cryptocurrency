@@ -7,6 +7,7 @@ export const FETCH_COINS = 'FETCH_COINS';
 export const FETCH_ALL_COINS = 'FETCH_ALL_COINS';
 export const FETCH_HISTORICAL_DATA = 'FETCH_HISTORICAL_DATA';
 export const SEARCH_COIN = 'SEARCH_COIN';
+export const SIGN_UP = 'SIGN_UP';
 
 export function fetchCoins() {
   const url = `${BASE_URL}ticker/?limit=10`;
@@ -46,7 +47,6 @@ export function fetchHistoricalData(sym) {
 }
 
 export function searchCoin(name) {
-
   const url = `${BASE_URL}ticker/${name}/`
   const request = axios.get(url)
     .then(res => res.data[0])
@@ -54,6 +54,23 @@ export function searchCoin(name) {
 
   return {
     type: SEARCH_COIN,
+    payload: request
+  }
+}
+
+export function signUp(username, password) {
+  const url = `${BACKEND_URL}create/`
+  const request = axios.post(url,
+    {
+      username: username,
+      password: password
+    }
+  ).then(response => console.log(response))
+  .catch(err => console.log(err));
+  console.log('signup', request);
+
+  return {
+    type: SIGN_UP,
     payload: request
   }
 }
