@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signUp } from '../actions';
+import { withRouter } from "react-router-dom";
 
 // Images
 import images from '../components/images';
@@ -10,12 +13,44 @@ class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      username: '',
+      password: '',
+      confirm: ''
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUsername = this.handleUsername.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+    this.handleConfirm = this.handleConfirm.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    if (this.state.password === this.state.confirm) {
+      this.props.signUp(this.state.username, this.state.password);
+      this.setState({
+        password: '',
+        confirm: ''
+      })
+      this.props.history.push('/')
+    } else {
+      alert('Make sure your passwords match')
+      this.setState({
+        password: '',
+        confirm: ''
+      })
+    }
+  }
+
+  handleUsername(e) {
+    this.setState({ username: e.target.value })
+  }
+
+  handlePassword(e) {
+    this.setState({ password: e.target.value })
+  }
+
+  handleConfirm(e) {
+    this.setState( { confirm: e.target.value })
   }
 
   render() {
@@ -31,43 +66,46 @@ class Signup extends Component {
           <li><Link to="/">Home</Link></li>
         </ul>
         <form onSubmit={this.handleSubmit}>
-          <div className="register">
-
-            <div className="register-username">
-              <div className="register-fieldname">
-                <p>Username:</p>
-              </div>
-              <div className="register-input">
-                <input type='text' />
-              </div>
-            </div>
-
-            <div className="register-pw">
-              <div className="register-fieldname">
-                <p>Password:</p>
-              </div>
-              <div className="register-input">
-                <input type='password' />
-              </div>
-            </div>
-
-            <div className="register-confirm-pw">
-              <div className="register-fieldname">
-                <p>Enter Password Again: </p>
-              </div>
-              <div className="register-input">
-                <input type='text' />
-              </div>
-            </div>
-
-            <button className="register-btn btn btn-lighten">
-              Submit
-            </button>
+          <div className="form-group">
+            <label htmlFor="userName">User Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="userName"
+              aria-describedby="userHelp"
+              placeholder="Enter User Name"
+              onChange={this.handleUsername}
+              value={this.state.username}
+            />
           </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              onChange={this.handlePassword}
+              value={this.state.password}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Confirm Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              onChange={this.handleConfirm}
+              value={this.state.confirm}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
+
       </div>
     )
   }
 }
 
-export default Signup;
+export default withRouter(connect(null, { signUp })(Signup));
