@@ -11,7 +11,7 @@ const Header = () => {
       </ul>
       <ul>
         <li><a className='text' href='http://127.0.0.1:8000/login/'>Log In</a></li>
-        <li><a className='text' href='http://127.0.0.1:8000/signup/'>Sign Up</a></li>
+        <li><Link className='text' to='/signup'>Sign Up</Link></li>
       </ul>
     </div>
   )
