@@ -131,7 +131,8 @@ html, body {
       .sign-up form .register input:focus {
         outline: none; }
 
-.register-btn {
-  float: right; }
+.form-group label {
+  color: white;
+  text-shadow: 0px 0px 3px black; }
 
 /*# sourceMappingURL=styles.css.map */

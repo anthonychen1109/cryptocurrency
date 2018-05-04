@@ -130,7 +130,7 @@ html,body {
 
 .market-container {
   @media only screen and (max-width: 800px) {
-    margin-top: 40px;    
+    margin-top: 40px;
   }
 }
 
@@ -184,6 +184,8 @@ html,body {
   }
 }
 
-.register-btn {
-  float: right;
+.form-group {
+  label {
+    @include text-color;
+  }
 }
