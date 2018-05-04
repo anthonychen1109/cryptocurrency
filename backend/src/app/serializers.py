@@ -1,11 +1,17 @@
 from rest_framework import serializers
-from .models import Coin
+from . import models
 
-class CoinSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        extra_kwargs = {
-            'url': {'lookup_field': 'slug'}
-        }
         fields = '__all__'
-        lookup_field = 'slug'
-        model = Coin
+        model = models.User
+
+        extra_kwargs = {'password': {'write_only': True}}
+
+        def create(self, validated_data):
+            user = User(
+                username=validated_data['username']
+            )
+            user.set_password(validated_data['password'])
+            user.save()
+            return user
