@@ -15,3 +15,9 @@ class UserSerializer(serializers.ModelSerializer):
             user.set_password(validated_data['password'])
             user.save()
             return user
+
+class UserUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ['password']
+        model = models.User
+        extra_kwargs = {'password': {'write_only': True}}
